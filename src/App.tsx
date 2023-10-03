@@ -4,7 +4,6 @@ import {colors} from "./data/colors.ts";
 import axios, {AxiosResponse} from "axios";
 import Generated from "./components/Generated.tsx";
 import {RotatingTriangles} from "react-loader-spinner";
-
 export interface IData {
   code: string;
   full_share_link: string;
@@ -17,7 +16,6 @@ export interface IData {
   short_link2: string;
   short_link3: string;
 }
-
 export default function App(): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
@@ -34,7 +32,7 @@ export default function App(): JSX.Element {
     setIsLoading(true);
     try {
       const response: AxiosResponse = await axios.get(`${import.meta.env.VITE_SHORTENER_API_URL}?url=${inputValue}`);
-      response && setData(response.data.result)
+      response && setData(response.data.result);
     } catch (err: any) { setError(slicedSTR(err.response.data.error)); }
     setIsLoading(false);
   }

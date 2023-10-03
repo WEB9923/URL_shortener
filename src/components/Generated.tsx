@@ -41,7 +41,7 @@ export default function Generated({data, reset}:
                 stiffness: 150
               }}
               onClick={reset}
-              className={"px-5 py-2.5 rounded-md bg-[rgba(93,49,146,0.20)] text-gray-300 font-medium"}
+              className={"w-full h-12 flex items-center justify-center rounded-md bg-[rgba(93,49,146,0.20)] text-gray-300 font-medium"}
             >
               generate new URL
             </motion.button>
